@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.enterToTheater">
+   <effect>
+      <Blend />
+   </effect>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <Label layoutX="268.0" layoutY="24.0" prefHeight="96.0" prefWidth="340.0" text="Enter to Theater" textAlignment="CENTER">
+         <font>
+            <Font name="Guttman-Aharoni Bold" size="41.0" />
+         </font>
+      </Label>
+      <Button fx:id="home" layoutX="26.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#moveToHomePage" text="Back To Home Page" />
+      <Button fx:id="btnEnter" layoutX="323.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#doEnterance" prefHeight="44.0" prefWidth="149.0" text="Enter">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label layoutX="135.0" layoutY="152.0" prefHeight="62.0" prefWidth="77.0" text="Perosn:">
+         <font>
+            <Font name="Guttman-Aharoni Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="134.0" layoutY="207.0" prefHeight="62.0" prefWidth="77.0" text="Theater:">
+         <font>
+            <Font name="Guttman-Aharoni Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="rowTxt" layoutX="323.0" layoutY="288.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="135.0" layoutY="267.0" prefHeight="62.0" prefWidth="59.0" text="Row:">
+         <font>
+            <Font name="Guttman-Aharoni Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="seatTxt" layoutX="323.0" layoutY="356.0" />
+      <Label layoutX="135.0" layoutY="338.0" prefHeight="62.0" prefWidth="59.0" text="Seat:">
+         <font>
+            <Font name="Guttman-Aharoni Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="414.0" prefHeight="62.0" prefWidth="167.0" text="Corona Test Date:">
+         <font>
+            <Font name="Guttman-Aharoni Bold" size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dp" layoutX="317.0" layoutY="433.0" />
+      <ComboBox fx:id="hallCom" layoutX="323.0" layoutY="228.0" prefWidth="150.0" />
+      <ComboBox fx:id="peopleCom" layoutX="323.0" layoutY="176.0" prefWidth="150.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="6.0" layoutX="236.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="362.0" />
+      <Button layoutX="557.0" layoutY="173.0" mnemonicParsing="false" onMouseClicked="#moveToAddPerson" text="Add new Person">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow height="9.14" radius="1.8450000000000002" width="0.24" />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

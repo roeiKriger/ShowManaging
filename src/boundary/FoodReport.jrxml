@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AgentReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a5f54182-819b-4f7d-a61f-0257e0213a51">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ManagAdapter"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="1000"/>
+	<subDataset name="Dataset1" uuid="64793d71-1f35-4677-b62f-b74ae078ef2b">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UCA"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT tb_artist.*
+FROM tb_artist]]>
+		</queryString>
+		<field name="artistId" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="artistId"/>
+			<property name="com.jaspersoft.studio.field.label" value="artistId"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tb_artist"/>
+		</field>
+		<field name="artistName" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="artistName"/>
+			<property name="com.jaspersoft.studio.field.label" value="artistName"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tb_artist"/>
+		</field>
+		<field name="janer" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="janer"/>
+			<property name="com.jaspersoft.studio.field.label" value="janer"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tb_artist"/>
+		</field>
+		<field name="agentId" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="agentId"/>
+			<property name="com.jaspersoft.studio.field.label" value="agentId"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tb_artist"/>
+		</field>
+	</subDataset>
+	<parameter name="tId" class="java.lang.Integer"/>
+	<parameter name="sId" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tbl_item.itemName,  Sum(tbl_order_item.amount)
+FROM (tbl_order INNER JOIN (tbl_item INNER JOIN tbl_order_item ON tbl_item.itemId = tbl_order_item.itemId) ON tbl_order.orderId = tbl_order_item.orderId) INNER JOIN tbl_order_ticket_to_show_theater ON tbl_order.orderId = tbl_order_ticket_to_show_theater.orderId
+WHERE (((tbl_order_ticket_to_show_theater.theaterId)=$P{tId}) AND ((tbl_order_ticket_to_show_theater.showId)=$P{sId}))
+GROUP BY tbl_item.itemName, tbl_order_ticket_to_show_theater.theaterId, tbl_order_ticket_to_show_theater.showId]]>
+	</queryString>
+	<field name="ITEMNAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ITEMNAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="ITEMNAME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="SYSTEM_SUBQUERY"/>
+	</field>
+	<field name="C2" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="C2"/>
+		<property name="com.jaspersoft.studio.field.label" value="C2"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="10" width="100" height="30" uuid="444d5a29-fec4-4b74-9dcd-5a3cac1a4b1c"/>
+				<textElement>
+					<font fontName="Segoe UI Historic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="30" width="450" height="60" uuid="a05ca7ae-99a5-45bc-af03-ca7082403aca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Historic" size="34" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Food Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="6" y="0" width="100" height="21" uuid="c60a54be-ae7a-4e8a-8add-454123b3fac1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4af43f37-7d01-47cf-b6e4-b11ea5a56917"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Segoe UI Historic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="0" width="100" height="20" uuid="b7b68171-b5b8-455e-96f6-768ba1f3c7b3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f00565a4-34ba-47db-96bd-d5bd0d01b204"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Segoe UI Historic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="da3ae766-c405-4a6f-99a1-7c1ef49b75f5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6d4bf7bb-1dd8-4a5f-bf8b-be0a54dc424f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ITEMNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="100" height="20" uuid="a5543d81-dda0-4a1e-985f-7b7990bd6807">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="398c30bb-41da-423c-9be6-479e65aae033"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{C2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,72 @@
+{
+	"shows":[
+		{
+			"DATEOFSHOW":"2022-02-27 00:00:00.000000",
+			"CITYNAME":"Haifa",
+			"maxInCapsule":"1",
+			"PRICE":"74.0000",
+			"SHOWID":"7",
+			"SHOWLENGTH":"75",
+			"MAXCAPACITY":"1",
+			"MANAGERNAME":"Roei Kriger",
+			"THEATERID":"1",
+			"HASBREAK":"TRUE",
+			"STATUS":"available",
+			"STARTTIME":"1899-12-30 19:10:00.000000",
+			"SHOWNAME":"the muppets",
+			"UPDATESTATUS":"2021-02-19 00:00:00.000000",
+			"THEATERNAME":"olamA"
+		},
+		{
+			"DATEOFSHOW":"2021-03-05 00:00:00.000000",
+			"CITYNAME":"Lod",
+			"maxInCapsule":"1",
+			"PRICE":"33.0000",
+			"SHOWID":"7",
+			"SHOWLENGTH":"75",
+			"MAXCAPACITY":"1",
+			"MANAGERNAME":"Ravid Plotnic",
+			"THEATERID":"5",
+			"HASBREAK":"TRUE",
+			"STATUS":"available",
+			"STARTTIME":"1899-12-30 18:21:00.000000",
+			"SHOWNAME":"the muppets",
+			"UPDATESTATUS":"2021-02-19 00:00:00.000000",
+			"THEATERNAME":"olamHaMaim"
+		},
+		{
+			"DATEOFSHOW":"2021-03-04 00:00:00.000000",
+			"CITYNAME":"Lod",
+			"maxInCapsule":"1",
+			"PRICE":"94.0000",
+			"SHOWID":"10",
+			"SHOWLENGTH":"94",
+			"MAXCAPACITY":"1",
+			"MANAGERNAME":"Ravid Plotnic",
+			"THEATERID":"5",
+			"HASBREAK":"TRUE",
+			"STATUS":"pilot",
+			"STARTTIME":"1899-12-30 21:30:00.000000",
+			"SHOWNAME":"Derbi",
+			"UPDATESTATUS":"2021-02-19 00:00:00.000000",
+			"THEATERNAME":"olamHaMaim"
+		},
+		{
+			"DATEOFSHOW":"2021-02-21 00:00:00.000000",
+			"CITYNAME":"TelAviv",
+			"maxInCapsule":"10",
+			"PRICE":"24.0000",
+			"SHOWID":"9",
+			"SHOWLENGTH":"100",
+			"MAXCAPACITY":"50",
+			"MANAGERNAME":"Matan Mayerowicz",
+			"THEATERID":"2",
+			"HASBREAK":"TRUE",
+			"STATUS":"pilot",
+			"STARTTIME":"1899-12-30 21:00:00.000000",
+			"SHOWNAME":"big brother",
+			"UPDATESTATUS":"2021-02-19 00:00:00.000000",
+			"THEATERNAME":"olamB"
+		}
+	]
+}
