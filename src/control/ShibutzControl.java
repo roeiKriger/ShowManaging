@@ -31,7 +31,7 @@ public class ShibutzControl
 	
 	
 	
-	//This method return all events for shibutz
+	//This method returns all events for 'shibutz' (scheduling)
 	public ArrayList<ShowInTheater> getAllEventsToShibutz()
 	{
 		Date today = java.sql.Date.valueOf(LocalDate.now());
@@ -50,7 +50,7 @@ public class ShibutzControl
 		return toReturn;
 	}
 	
-	//This method gets Event and return the all the buyers for the shibutz
+	//This method gets Event and returns all of the buyers for the 'shibutz'
 	public ArrayList<TicketBuyers> getAllTicketBuyers(ShowInTheater shI)
 	{
 		return ImportControl.getAllTicketByIDS(shI);
@@ -76,9 +76,8 @@ public class ShibutzControl
 					int col = rs.getInt(i++);
 					Boolean flag = rs.getBoolean(i++);
 					Seat s = new Seat(row, col, th, flag);
-					if(flag)//the seat is avaliable
+					if(flag)	//the seat is avaliable
 						seatsList.add(s);
-					//System.out.println(s);
 				}
 			}
 		} 
@@ -94,7 +93,7 @@ public class ShibutzControl
 	}
 	
 	
-	//this method get theater, row and seat and return true if can do the shibutz
+	//This method gets theater, row and seat and return true if can do the shibutz
 	public boolean doShibutz(Theater th,int row, int seat ) throws ClassNotFoundException, SQLException
 	{
 		ArrayList<Seat> allAv = allAvalibleSeats(th);
@@ -103,9 +102,8 @@ public class ShibutzControl
 			if(s.getRow()==row && s.getCol() == seat)
 			{
 				if(s.getIsAvalible())
-				{
-					// method changing the avaliable 
-					changeAvaliableSeat(th,row,seat);
+				{					
+					changeAvaliableSeat(th,row,seat); // method changing the avaliable 
 					return true;
 				}
 				else
@@ -118,7 +116,7 @@ public class ShibutzControl
 
 	}
 	
-	//this method update the available status
+	//This method updates the available status
 	private boolean changeAvaliableSeat(Theater th,int row, int seat ) throws ClassNotFoundException, SQLException
 	{
 		Boolean flag = false;
@@ -136,7 +134,7 @@ public class ShibutzControl
 
 	}
 	
-	//this method return all persons 
+	//This method returns all persons 
 	public ArrayList<Person> getAllPersons()
 	{
 		ArrayList<Person> personList = new ArrayList<Person>();
@@ -159,7 +157,7 @@ public class ShibutzControl
 		return personList;
 	}
 
-	//this method return all persons 
+	//This method returns all Theaters 
 	public ArrayList<Theater> getAllTheaters()
 	{
 		ArrayList<Theater> theaterList = new ArrayList<Theater>();
@@ -183,7 +181,7 @@ public class ShibutzControl
 	}
 	
 	
-	//this method add Entrance to system
+	//This method add Entrance of a person to the system
 	public boolean addEnterance(java.sql.Date tim,Person p, Theater t, int row, int seat, java.sql.Date testDate) throws SQLException, ClassNotFoundException
 	{
 		Class.forName(Consts.JDBC_STR);
