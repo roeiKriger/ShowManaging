@@ -86,11 +86,10 @@ public class LoginControl
 		return false;
 	}
 	
-	//this method gets Custumer and return true if sucssed to add to DB
+	//This method gets Custumer and returns true if sucssed to add to DB
 	public boolean addNewCutsumerToDB(Custumer c) throws ClassNotFoundException, SQLException
 	{
-		addNewPersonToDB(c);
-		//inserting to showInTheater
+		addNewPersonToDB(c); 		//inserting to showInTheater
 		Class.forName(Consts.JDBC_STR);
 		try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
 				CallableStatement stmt =  conn.prepareCall(util.Consts.SQL_INS_CUSTUMER)){
@@ -104,7 +103,7 @@ public class LoginControl
 	}
 		
 
-	//this method gets Custumer and return true if sucssed to add to DB
+	//This method gets Custumer and returns true if succeed adding to DB
 	public boolean addNewPersonToDB(Person p) throws ClassNotFoundException, SQLException
 	{
 		Class.forName(Consts.JDBC_STR);
@@ -144,5 +143,4 @@ public class LoginControl
 		
 	}
 	
-
 }
