@@ -65,7 +65,7 @@ public class ReportControl
 	}
 
 	
-	//this method gets event and return hashMap of items name and amounts
+	//This method gets event and returns a hashMap of items name and amounts
 	public HashMap<String, Integer> calcAmount(int theaterId, int showId)
 	{
 		HashMap<String, Integer> itemsInShow = new HashMap<String, Integer>();
@@ -89,17 +89,15 @@ public class ReportControl
 			e.printStackTrace();
 		}
 		return itemsInShow;
-		
-		
+				
 	}
 	
-	//this method get event and item name and return the amount to give in show
+	//This method get event and item name and return the amount to give in show
 	public int getAmount(int theaterId, int showId, String name)
 	{
 		HashMap<String, Integer> itemsInShow = calcAmount(theaterId, showId);
 		return itemsInShow.get(name);
 		
 	}
-
 	
 }
