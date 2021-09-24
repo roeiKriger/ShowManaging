@@ -31,7 +31,7 @@ public class orderControl
 		return instance;
 	}
 	
-	//this is to save the event the custumer choose
+	//This var is to save the event which the custumer chose
 	private ShowInTheater choose;
 	
 	public ShowInTheater getChoose() {
@@ -98,7 +98,7 @@ public class orderControl
 	
 	
 	/**
-	 * Gets all the event from the database
+	 * Gets all the events from the database
 	 * @return ArrayList of events
 	 */
 	
@@ -125,7 +125,7 @@ public class orderControl
 	}
 	
 	
-	//this method get showChoose and ticketNumver and do the invite
+	//This method gets showChoose and ticketNumver and do the invite
 	public boolean orderShow(int ticketNumber, ShowInTheater showChoose) throws ClassNotFoundException, SQLException, ticketNumberException
 	{
 		Boolean isCanBe = ImportControl.canBeThere(showChoose, ticketNumber);
@@ -138,11 +138,10 @@ public class orderControl
 
 	}
 	
-	//this method do the insertOrder to the DB
+	//This method do the insertOrder to the DB
 	private boolean insertOrder(int ticketNumber, ShowInTheater showChoose) throws ClassNotFoundException, SQLException
 	{
 		Date today = java.sql.Date.valueOf(LocalDate.now());
-		//toDO
 		Custumer loginCustumer= LoginControl.getInstance().getLoginCustumer();
 		Class.forName(Consts.JDBC_STR);
 		try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
@@ -156,8 +155,7 @@ public class orderControl
 	}
 	
 	private boolean insertTicketsToOrder(int ticketNumber, ShowInTheater showChoose, int orderId) throws ClassNotFoundException, SQLException
-	{
-		
+	{		
 		Class.forName(Consts.JDBC_STR);
 		try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
 				CallableStatement stmt =  conn.prepareCall(util.Consts.SQL_NEW_Ticket)){
@@ -168,12 +166,10 @@ public class orderControl
 			stmt.setInt(i++, ticketNumber);
 			stmt.executeUpdate();	
 		}
-		return true;
-		
-		
+		return true;				
 	}
 	
-	//this method returb the orderId Value
+	//This method returb the orderId Value
 	private int getOrderId()
 	{
 		try {
@@ -197,7 +193,7 @@ public class orderControl
 			
 	}
 	
-	//this method get all the items for sell from DB
+	//This method gets all the items for sell from DB
 	public ArrayList<Item> getAllItems()
 	{
 		ArrayList<Item> allItems = new ArrayList<>();
@@ -225,7 +221,7 @@ public class orderControl
 		return allItems;
 	}
 
-	//This method get item and amount and insert the order to DB
+	//This method gets item and amount and insert the order to DB
 	public boolean inviteTheItem(Item chooseItem , int amount) throws SQLException, ClassNotFoundException
 	{
 		Class.forName(Consts.JDBC_STR);
@@ -237,10 +233,7 @@ public class orderControl
 			stmt.setInt(i++, chooseItem.getItemId());
 			stmt.executeUpdate();	
 		}
-		return true;
-		
-		
-		
+		return true;					
 	}
 	
 	
